@@ -47,7 +47,7 @@ export async function onRequest(context) {
       // No entry found, generate a new passphrase
       passphrase = crypto.randomBytes(8).toString('hex');
       // Create a new IPSK entry
-      const newEntry = { name: date, passphrase };
+      const newEntry = { name: date, passphrase: passphrase, groupPolicyId: '100' };
       // Post the new entry to the Meraki API
       await makeRequest('POST', newEntry);
     }
