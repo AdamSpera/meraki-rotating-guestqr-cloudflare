@@ -13,6 +13,7 @@
 
   <div class="container">
     <div class="row justify-content-center align-items-center" style="height: 100vh;">
+      <p>Scan for Guest Wi-Fi</p>
       <div id="qrcode"></div>
     </div>
   </div>
@@ -36,8 +37,8 @@
       var wifiInfo = "WIFI:T:WPA;S:" + ssid + ";P:" + passcode + ";;";
         var qrcode = new QRCode(document.getElementById("qrcode"), {
             text: wifiInfo,
-            width: 128,
-            height: 128,
+            width: 748,
+            height: 748,
         });
 
     })
