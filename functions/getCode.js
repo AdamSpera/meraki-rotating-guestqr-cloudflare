@@ -1,5 +1,3 @@
-import crypto from 'crypto';  // Import the crypto module for generating a random passphrase
-
 export async function onRequest(context) {
   try {
     // Check if the request method is GET
