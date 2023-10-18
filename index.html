@@ -7,16 +7,60 @@
   <title>WiFi QR Code</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -moz-osx-font-smoothing: grayscale;
+      background-image: url('grid-tile.png');
+      background-repeat: repeat;
+      background-size: 35px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    h1 {
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 120%;
+      color: #171717;
+      user-select: none;
+      text-align: center;
+    }
+
+    #footer {
+      margin-top: auto;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100vh - 20px); /* Subtracting the footer height approximately */
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="container">
-    <div class="row justify-content-center align-items-center" style="height: 100vh;">
-      <p>Scan for Guest Wi-Fi</p>
-      <div id="qrcode"></div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col text-center">
+        <h1>Scan for Guest Wi-Fi</h1>
+        <div id="qrcode"></div>
+      </div>
     </div>
   </div>
+  <div id="footer">An IdioSplash Solution</div>
 
   <!-- jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -27,24 +71,20 @@
 
   <!-- Custom JS -->
   <script>
-    
-    fetch(window.location.href + 'getCode', {method: 'GET',})
-    .then(response => response.json())
-    .then(data => {
-
-      var ssid = "MyWifiSsid";
-      var passcode = status.ipsk;
-      var wifiInfo = "WIFI:T:WPA;S:" + ssid + ";P:" + passcode + ";;";
+    fetch(window.location.href + 'getCode', { method: 'GET', })
+      .then(response => response.json())
+      .then(data => {
+        var ssid = "MyWifiSsid";
+        var passcode = status.ipsk;
+        var wifiInfo = "WIFI:T:WPA;S:" + ssid + ";P:" + passcode + ";;";
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: wifiInfo,
-            width: 748,
-            height: 748,
+          text: wifiInfo,
+          width: 624,
+          height: 624,
         });
-
-    })
-    .catch(error => console.error('Error:', error));
-
-</script>
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
 
 </body>
 
