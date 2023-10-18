@@ -7,7 +7,8 @@
   <title>WiFi QR Code</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
   <style>
     body {
       margin: 0;
@@ -49,7 +50,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: calc(100vh - 20px); /* Subtracting the footer height approximately */
+      height: calc(100vh - 20px);
+      /* Subtracting the footer height approximately */
     }
   </style>
 </head>
@@ -87,12 +89,12 @@
           width: 624,
           height: 624,
         });
-        $('#qrcode').css('text-align', 'center');
-        $('#qrcode').children('img').css('text-align', 'center');
-        $('#qrcode').children('img').css('display', 'inline');
-        $('#qrcode').children('img').css('width', '40%');
       })
       .catch(error => console.error('Error:', error));
+    $('#qrcode').css('text-align', 'center');
+    $('#qrcode').children('img').css('text-align', 'center');
+    $('#qrcode').children('img').css('display', 'inline');
+    $('#qrcode').children('img').css('width', '40%');
   </script>
 
 </body>
