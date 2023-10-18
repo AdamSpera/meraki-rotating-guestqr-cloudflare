@@ -25,7 +25,17 @@ export async function onRequest(context) {
       throw new Error('Error fetching data from Meraki API');
 
     // Parse the JSON response
-    const jsonResponse = JSON.stringify(await response.json());
+    const identity_psks = await response.json();
+
+    // Get current date formatted
+    const date = new Date().toISOString().slice(0, 10);
+
+    // Find the entry with a name matching the current date
+    const matchingEntry = identity_psks.find(entry => entry.name === date);
+
+    // Prepare the response
+    const responseBody = matchingEntry ? { ipsk: matchingEntry.ipsk } : false;
+    const jsonResponse = JSON.stringify(responseBody);
 
     return new Response(jsonResponse, { 
       status: 200, 
