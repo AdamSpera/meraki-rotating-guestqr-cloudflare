@@ -3,7 +3,8 @@
 *Cloudflare: Rotating Guest WiFi QR Code*  
 An Open-Source Meraki Guest Wi-Fi Rotating QR Code using Cloudflare Pages.
 
-ADD BADGES HERE
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/AdamSpera/meraki-rotating-guestqr-cloudflare)
+[![Run in Cisco Cloud IDE](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-runable-icon.svg)](https://developer.cisco.com/codeexchange/devenv/AdamSpera/meraki-rotating-guestqr-cloudflare/)
 
 ## Overview
 
