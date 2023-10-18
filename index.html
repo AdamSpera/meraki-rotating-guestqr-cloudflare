@@ -32,7 +32,7 @@
     .then(data => {
 
       var ssid = "MyWifiSsid";
-      var passcode = "MyWifiPasscode";
+      var passcode = status.ipsk;
       var wifiInfo = "WIFI:T:WPA;S:" + ssid + ";P:" + passcode + ";;";
         var qrcode = new QRCode(document.getElementById("qrcode"), {
             text: data.qrCodeText,
