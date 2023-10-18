@@ -5,7 +5,7 @@ export async function onRequest(context) {
       throw new Error('Method not allowed');
 
     // Verify the value of the "verify" field
-    return new Response({'ipsk': '123456789'}, { status: 200 });
+    return new Response(JSON.stringify({'ipsk': '123456789'}), { status: 200 });
   } catch (err) {
     // Return an error response
     const errorResponse = JSON.stringify({ error: err.message });
