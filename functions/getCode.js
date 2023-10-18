@@ -4,6 +4,8 @@ export async function onRequest(context) {
     if (context.request.method !== 'GET')
       throw new Error('Method not allowed');
 
+    
+
     // Verify the value of the "verify" field
     return new Response(JSON.stringify({'ipsk': '123456789'}), { status: 200 });
   } catch (err) {

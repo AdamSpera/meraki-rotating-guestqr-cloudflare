@@ -35,7 +35,7 @@
       var passcode = status.ipsk;
       var wifiInfo = "WIFI:T:WPA;S:" + ssid + ";P:" + passcode + ";;";
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: data.qrCodeText,
+            text: wifiInfo,
             width: 128,
             height: 128,
         });
