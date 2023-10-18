@@ -92,7 +92,9 @@
         $('#qrcode').css('text-align', 'center');
         $('#qrcode').children('img').css('width', '40%');
         $('#qrcode').children('img').css('text-align', 'center');
-        $('#qrcode').children('img').css('display', 'inline');
+        setTimeout(function() {
+          $('#qrcode').children('img').css('display', 'inline');
+        }, 1000);
       })
       .catch(error => console.error('Error:', error));
   </script>
