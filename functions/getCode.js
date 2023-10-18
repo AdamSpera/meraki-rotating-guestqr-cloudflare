@@ -34,7 +34,7 @@ export async function onRequest(context) {
     const matchingEntry = identity_psks.find(entry => entry.name === date);
 
     // Prepare the response
-    const responseBody = matchingEntry ? { ipsk: matchingEntry.ipsk } : false;
+    const responseBody = matchingEntry ? { ipsk: matchingEntry.passphrase } : false;
     const jsonResponse = JSON.stringify(responseBody);
 
     return new Response(jsonResponse, { 
