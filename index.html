@@ -87,7 +87,9 @@
           width: 624,
           height: 624,
         });
+        $('#qrcode').css('text-align', 'center');
         $('#qrcode').children('img').css('text-align', 'center');
+        $('#qrcode').children('img').css('display', '');
       })
       .catch(error => console.error('Error:', error));
   </script>
