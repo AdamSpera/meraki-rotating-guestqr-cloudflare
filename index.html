@@ -89,12 +89,12 @@
           width: 624,
           height: 624,
         });
+        $('#qrcode').css('text-align', 'center');
+        $('#qrcode').children('img').css('text-align', 'center');
+        $('#qrcode').children('img').css('display', 'inline !important');
+        $('#qrcode').children('img').css('width', '40%');
       })
       .catch(error => console.error('Error:', error));
-    $('#qrcode').css('text-align', 'center');
-    $('#qrcode').children('img').css('text-align', 'center');
-    $('#qrcode').children('img').css('display', 'inline');
-    $('#qrcode').children('img').css('width', '40%');
   </script>
 
 </body>
