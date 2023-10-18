@@ -32,10 +32,6 @@ export async function onRequest(context) {
     // Get current date formatted
     const date = new Date().toISOString().slice(0, 10);
 
-    // DEBUG
-    // console.log('date', date);
-    console.log('identity_psks', identity_psks);
-
     // Find the entry with a name matching the current date
     const matchingEntry = identity_psks.find(entry => entry.name === date);
 
@@ -45,9 +41,9 @@ export async function onRequest(context) {
       passphrase = matchingEntry.passphrase;
     } else {
       // No entry found, generate a new passphrase
-      passphrase = crypto.randomBytes(8).toString('hex');
+      passphrase = generatePassphrase();
       // Create a new IPSK entry
-      const newEntry = { name: date, passphrase: passphrase, groupPolicyId: '100' };
+      const newEntry = { name: date, passphrase: passphrase, groupPolicyId: 100 };
       // Post the new entry to the Meraki API
       await makeRequest('POST', newEntry);
     }
@@ -64,4 +60,11 @@ export async function onRequest(context) {
     const errorResponse = JSON.stringify({ error: err.message });
     return new Response(errorResponse, { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
+}
+
+// Helper function to generate a random passphrase
+function generatePassphrase() {
+  const array = new Uint8Array(8);
+  window.crypto.getRandomValues(array);
+  return Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
 }
