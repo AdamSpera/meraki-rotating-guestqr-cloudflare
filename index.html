@@ -41,6 +41,10 @@
       color: #888;
     }
 
+    .divider {
+      height: 25px;
+    }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -56,6 +60,7 @@
     <div class="row justify-content-center align-items-center">
       <div class="col text-center">
         <h1>Scan for Guest Wi-Fi</h1>
+        <div class="divider"></div>
         <div id="qrcode"></div>
       </div>
     </div>
@@ -82,6 +87,7 @@
           width: 624,
           height: 624,
         });
+        $('#qrcode').children('img').css('text-align', 'center');
       })
       .catch(error => console.error('Error:', error));
   </script>
